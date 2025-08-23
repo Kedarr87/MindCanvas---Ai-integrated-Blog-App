@@ -6,9 +6,9 @@ import BlogCard from "./BlogCard";
 const BlogList = ({ blogs }) => {
   const [menu, setMenu] = useState("All");
 
-  const filteredByCategory = blogs.filter(
-    (blog) => menu === "All" || blog.category.toLowerCase() === menu.toLowerCase()
-  );
+  const filteredByCategory = (blogs || []).filter(
+  (blog) => menu === "All" || blog.category?.toLowerCase() === menu.toLowerCase()
+);
 
   return (
     <div>

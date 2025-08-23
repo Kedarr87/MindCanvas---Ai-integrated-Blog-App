@@ -18,7 +18,7 @@ const Header = ({ search, setSearch, blogs, setFilteredBlogs }) => {
     )
 
     setFilteredBlogs(results)
-    setSearch("")
+   
 
   }
 
