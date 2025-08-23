@@ -25,7 +25,7 @@ const AddBlog = () => {
 
         try {
             setLoading(true)
-            const res = await axios.post(`${process.env.URL}/api/blog/generate`, {prompt: title})
+            const res = await axios.post(`${import.meta.env.URL}/api/blog/generate`, {prompt: title})
 
 
             if(res.data?.content){
@@ -60,7 +60,7 @@ const AddBlog = () => {
             formData.append("blog", JSON.stringify(blog))
             formData.append("image", image)
 
-            const res = await axios.post(`${process.env.URL}/api/blog/add`, formData)
+            const res = await axios.post(`${import.meta.env.URL}/api/blog/add`, formData)
 
             try {
                 toast.success("Blog added succesfully")

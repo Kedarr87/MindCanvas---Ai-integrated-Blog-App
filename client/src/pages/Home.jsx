@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     const getBlogData = async () => {
-      const res = await axios.get(`${process.env.URL}/api/blog/all`);
+      const res = await axios.get(`${import.meta.env.URL}/api/blog/all`);
       setBlogs(res.data.blogs);
       setFilteredBlogs(res.data.blogs); 
     };

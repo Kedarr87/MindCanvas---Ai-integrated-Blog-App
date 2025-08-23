@@ -8,7 +8,7 @@ const ListBlog = () => {
 
     const getData = async() => {
         try {
-            const res= await axios.get(`${process.env.URL}/api/blog/all`)
+            const res= await axios.get(`${import.meta.env.URL}/api/blog/all`)
             setBlogs(res.data.blogs)
         } catch (error) {
             console.log(error.message)

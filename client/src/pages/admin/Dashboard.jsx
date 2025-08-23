@@ -13,7 +13,7 @@ const Dashboard = () => {
     })
 
     const fetchDashboard = async() =>{
-        const res = await axios.get(`${process.env.URL}/api/admin/dashboard`)
+        const res = await axios.get(`${import.meta.env.URL}/api/admin/dashboard`)
         console.log(res.data.dashboardData)
         setDashboardData(res.data.dashboardData)
     }
