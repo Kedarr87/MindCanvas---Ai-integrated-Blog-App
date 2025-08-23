@@ -19,7 +19,7 @@ const Blog = () => {
 
   const getBlogs = async(id) => {
     try {
-      const res = await axios.get(`${import.meta.env.URL}/api/blog/${id}`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/blog/${id}`)
       setData(res.data.blog)
       console.log(res.data.blog)
     } catch (error) {
@@ -30,7 +30,7 @@ const Blog = () => {
   // Comments
 
   const fetchComments = async() => {
-    const res = await axios.get(`${import.meta.env.URL}/api/blog/${id}/comments`)
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/blog/${id}/comments`)
     setComments(res.data.comments)
   }
 
@@ -38,7 +38,7 @@ const Blog = () => {
     e.preventDefault()
 
     try {
-      const res = await axios.post(`${import.meta.env.URL}/api/blog/${id}/add-comment`, {name, content})
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/blog/${id}/add-comment`, {name, content})
       toast.success("Comment added successfully")
       fetchComments()
       setName("")

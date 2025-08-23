@@ -25,7 +25,7 @@ const AddBlog = () => {
 
         try {
             setLoading(true)
-            const res = await axios.post(`${import.meta.env.URL}/api/blog/generate`, {prompt: title})
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/blog/generate`, {prompt: title})
 
 
             if(res.data?.content){
