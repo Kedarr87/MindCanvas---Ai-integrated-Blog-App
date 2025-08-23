@@ -23,3 +23,9 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`we are running at http://localhost:${PORT}`)
 })
+
+app.get("/", (req, res) => {
+    res.send("Backend is running")
+})
+
+module.exports = app
