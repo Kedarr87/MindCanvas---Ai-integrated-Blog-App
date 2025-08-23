@@ -11,7 +11,7 @@ const BlogTable = ({index, fetchDashboard, blog}) => {
 
     const handlePublish = async() => {
         try {
-            const res = await axios.put("http://localhost:4000/api/blog/toggle-publish", {id: blog._id})
+            const res = await axios.put(`${process.env.URL}/api/blog/toggle-publish`, {id: blog._id})
             console.log(res)
             fetchDashboard()
         } catch (error) {
@@ -21,7 +21,7 @@ const BlogTable = ({index, fetchDashboard, blog}) => {
 
     const handleDelete = async(id) => {
         try {
-            const res = await axios.post("http://localhost:4000/api/blog/delete", {id})
+            const res = await axios.post(`${process.env.URL}/api/blog/delete`, {id})
             toast.success("Blog Deleted")
             fetchDashboard()
         } catch (error) {
