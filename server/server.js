@@ -10,7 +10,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: "https://your-frontend.vercel.app",
+    origin: "https://mind-canvas-ai-integrated-blog-app.vercel.app/",
     credentials: true
 }))
 app.use(express.json())
